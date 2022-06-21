@@ -1,8 +1,8 @@
 #Requires -RunAsAdministrator
 
 $Password = ConvertTo-SecureString '' -AsPlainText -Force
-$Username = ConvertTo-SecureString '' -AsPlainText -Force
-$Description = ConvertTo-SecureString '' -AsPlainText -Force
+$Username = ''
+$Description = ''
 
 $WinNT = [ADSI]"WinNT://${env:Computername}"
 $LocalUsers = $WinNT.Children | where {$_.SchemaClassName -eq 'user'} | % {$_.name[0].ToString()}
